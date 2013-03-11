@@ -39,22 +39,13 @@ a:active {
 -------------------------------------------------------------- */
 #site-name {
 	font-family: "Arial", sans-serif;
-	font-size: 325%;
+	font-size: 378%;
   font-weight: 700;
-  line-height: 120%;
+  line-height: 118%;
   margin: 0;
-  padding: 55px 25px 0px 70px;
+  padding: 23px 25px 0px 171px;
 }
 
-#slogan {
-  font-size: 225%;
-	font-family: "Arial", sans-serif;
-  font-weight: 200;
-  font-style: oblique;
-  line-height: 120%;
-  margin: 0;
-  padding: 0px 25px 50px 60px;
-}
 
 .footer-message {
   font-size: 90%;
@@ -102,6 +93,7 @@ body {
 /* By default this wrapper is set to 100% width and centered -- override here to
   narrow wrapper or align left or right */
 .page {
+	width: 960px;
 }
 
 /* The 0 values here remove padding and spacing at the bottom of the page.
@@ -128,12 +120,11 @@ body {
 #header-group .header-site-info {
 	float: left;
 	width: 480px;
-	background-color: red;
 	margin-bottom: 0px;
 }
 
 #site-name-wrapper {
-	background-color: #038c65;
+  background: #038c65 url(../images/compdocslogo.png) no-repeat 15% 31px;
 	float: left;
 	height: 160px;
 	width: 480px;
@@ -221,7 +212,7 @@ Nice Menu
 	margin-bottom: 0em;
 	background-color: #297373;
 	float: left;
-	width: 660px;
+	width: 690px;
 }
 
 ul.nice-menu,
@@ -339,7 +330,7 @@ User Menu
 	text-transform: uppercase;
 	font-family: "Arial", sans-serif;
 	font-weight: bold;
-	margin-left: 70px;
+	margin-left: 40px;
 }
 
 #block-system-user-menu a {
@@ -398,7 +389,7 @@ User Menu
 }
 
 .main .sidebar-second .gutter{
-	margin-left: 20px;
+	margin-left: 0px;
 }
 
 
@@ -465,8 +456,8 @@ User Menu
 }
 
 .content-inner .block{
-	margin: 20px 20px 0px 30px;
-	width: 610px;
+	margin: 20px 30px 0px 30px;
+	width: 590px;
 }
 
 .content-inner.block {
@@ -504,6 +495,10 @@ User Menu
 	height: 435px;
 }
 
+.front .block .content {
+	line-height: 150%;
+}
+
 .front .sidebar-first {
 	color: #297373;
 	background-color: #0dd965;
@@ -519,6 +514,14 @@ User Menu
 .front .sidebar-first .gutter{
 	margin: 0px;
 }
+
+
+/* Services Page Settings
+-------------------------------------------------------------- */
+#pid-services .content-group{
+	line-height: 135%;
+}
+
 
 
 
@@ -631,7 +634,7 @@ User Menu
 }
 
 
-/* Find Work Order Ticket Views Page Settings
+/* Find Work Order Views Page Settings
 -------------------------------------------------------------- */
 .view-filters {
 	margin-bottom: 20px;
@@ -640,62 +643,112 @@ User Menu
 	border-bottom-style: solid;
 }
 
-#pid-work-order-tickets .content-inner .block {
+#pid-my-work-order .content-inner .block,
+#pid-work-order-doctor .content-inner .block {
 	width: 960px;
 	margin: 0px;
 }
-#pid-work-order-tickets h1.title,
-.node-type-ticket h1.title {
+
+#pid-work-order-doctor h1.title,
+#pid-my-work-order h1.title,
+.node-type-workorder h1.title {
 	font-family: 'Pantano Sans', sans-serif;
 	font-size: 2em;
 	color: #297373;
-	margin: 20px 10px 0px 15px;
+	margin: 20px 10px 0px 10px;
+}
+
+#pid-node-add-workorder .form-item .description {
+	visibility: hidden;
 }
 
 
 
-
-
-
-
-
-/* Ticket Node Settings
+/* Work Order Form Settings & Work Order Disclaimer Block Settings
 -------------------------------------------------------------- */
 
-#pid-node-add-ticket .form-item-title,
-#pid-node-add-ticket .region-help,
-.node-type-ticket .form-item-title {
-	visibility: hidden;
+#pid-node-add-workorder .form-item-title,
+#pid-node-add-workorder .region-help,
+.node-type-workorder .form-item-title {
+/* 	visibility: hidden; */
 	position: fixed;
 }
 
 
-#pid-node-add-ticket .content-inner .block {
+#pid-node-add-workorder .content .block,
+.page-admin-structure-block .content .block {
 	margin: 0px 50px 20px 50px;
 	width: 860px;
 }
 
-.node-type-ticket .field-items p{
+.node-type-workorder .field-items p{
 	margin: 0px 0px 1em 0px;
 }
 
 
-.node-type-ticket .field-items {
+.node-type-workorder .field-items {
 /* 	background-color: aqua; */
 	font-size: 1.5em;
 	line-height: normal;
 	margin: 0px 0px 1em 0px;
 }
 
-.node-type-ticket .field-name-comment-body .field-items{
+.node-type-workorder .field-name-comment-body .field-items{
 /* 	background-color: yellow; */
 }
 
 
-.node-type-ticket .content-inner .block{
+.node-type-workorder .content-inner .block{
 	width: 930px;
 	margin: 0px;
 }
+
+
+/* Find User Views Page Settings
+-------------------------------------------------------------- */
+#pid-admin-people .content-inner .block {
+	width: 960px;
+	margin: 0px;
+}
+
+#pid-admin-people h1.title {
+	font-family: 'Pantano Sans', sans-serif;
+	font-size: 2em;
+	color: #297373;
+	margin: 20px 10px 0px 10px;
+}
+
+
+/* Add User Form Settings
+-------------------------------------------------------------- */
+#pid-admin-people-create .gutter{
+	margin: 0px;
+}
+
+#pid-admin-people-create .content-help{
+	margin: 0px;
+}
+
+#pid-admin-people-create .region-help{
+	width: 909px;
+	background-color: aqua;
+	margin-bottom: 0px;
+}
+
+#pid-admin-people-create .region-help .block{
+	margin-bottom: 0px;
+}
+
+#pid-admin-people-create .content .block{
+	margin: 0px 50px 20px 50px;
+	width: 860px;
+}
+
+#pid-admin-people-create .content-inner-inner h1{
+	visibility: hidden;
+	margin: 0px;
+}
+
 
 
 /*  Postscript & Footer Regions
@@ -1116,6 +1169,16 @@ tr.drag-previous td {
 /* Comments
 /-------------------------------------------------------------- */
 /* Style for each individual comment */
+.node-type-workorder .comment-new span.new {
+	visibility: hidden;
+}
+
+.node-type-workorder .comment ul {
+	visibility: hidden;
+}
+
+
+
 div.comment {
   padding: 0px;
 }

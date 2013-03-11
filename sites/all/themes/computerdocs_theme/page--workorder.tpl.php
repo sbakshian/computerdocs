@@ -48,7 +48,7 @@
             <div id="content-inner-inner" class="content-inner-inner inner">
               <?php print render($title_prefix); ?>
               <?php if ($title): ?>
-              <h1 class="title"><?php print("Work Order Ticket Number: ")?><?php print $node->nid; ?></h1>
+              <h1 class="title"><?php print("Work Order Number: ")?><?php print $node->nid; ?></h1>
               <?php endif; ?>
               <?php print render($title_suffix); ?>
               <?php if ($action_links): ?>
