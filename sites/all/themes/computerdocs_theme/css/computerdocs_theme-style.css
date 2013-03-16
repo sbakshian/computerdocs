@@ -649,6 +649,7 @@ User Menu
 	margin: 0px;
 }
 
+#pid-blog h1.title,
 #pid-work-order-doctor h1.title,
 #pid-my-work-order h1.title,
 .node-type-workorder h1.title {
@@ -748,6 +749,21 @@ User Menu
 	visibility: hidden;
 	margin: 0px;
 }
+
+/* Blog Page Settings
+-------------------------------------------------------------- */
+#pid-blog h1.title {
+	font-family: 'Pantano Sans', sans-serif;
+	font-size: 2em;
+	color: #297373;
+	margin: 20px 10px 0px 38px;
+}
+
+
+#pid-blog .content .inner{
+	margin-bottom: 50px;
+}
+
 
 
 
