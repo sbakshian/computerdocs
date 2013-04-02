@@ -7,6 +7,8 @@ Dark Green: #038c65;
 Green: #0abf6a;
 Light Green: #0dd965;
 Bright Green: #6bff75;
+Background Body Grey: #FAFAFA; 
+Logo Blue: #80a5e9;
 
 
 /* Hex colors for LCI website
@@ -274,7 +276,7 @@ ul.nice-menu ul {
 ul.nice-menu-down {
   float: left; /* LTR */
   border: 0;
- 	margin-left: 55px;
+ 	margin-left: 40px;
 }
 
 ul.nice-menu-down li {
@@ -411,11 +413,18 @@ User Menu
 	height: 450px;
 } 
 
-#pid-services .main .sidebar-first .block-block{
+#pid-services .main .region-sidebar-first{
 	float:left;
 	margin: 0px 0px 0px 0px;
-	height: 600px;
+	height: 800px;
+	background-color: #0dd965;
 } 
+
+#pid-services .main .region-sidebar-first p{
+	color: #297373;	
+}
+
+
 
 .main .sidebar-first .block-views,
 .main .sidebar-second .block-views{
@@ -524,6 +533,12 @@ User Menu
 
 
 
+/* No Sidebars Page Settings
+-------------------------------------------------------------- */
+.no-sidebars .block-system{
+	width: 900px;
+}
+
 
 /* 2 Column Page Settings
 -------------------------------------------------------------- */
@@ -575,11 +590,37 @@ User Menu
 }
 
 
+/* Facebook Feed Block Settings
+-------------------------------------------------------------- */
+
+#block-views-facebook_feed-block {
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-right-color: #038c65;
+}
+
+#block-views-facebook_feed-block .views-row{
+	margin-bottom: 50px;
+	margin-left: 40px;
+}
+
+#block-views-facebook_feed-block p{
+	margin-bottom: 5px;
+}
+
+
+
+#block-views-facebook_feed-block .views-row-even{
+}
+
+
+
+
 
 
 /* Testimonial Block Settings
 -------------------------------------------------------------- */
-.block-views{
+.front .block-views{
 	background-color: #003366;
 }
 
@@ -634,7 +675,7 @@ User Menu
 }
 
 
-/* Find Work Order Views Page Settings
+/* Find Work Order Views Page Settings for Doctor and Client
 -------------------------------------------------------------- */
 .view-filters {
 	margin-bottom: 20px;
@@ -664,9 +705,20 @@ User Menu
 }
 
 
+.node-type-workorder .form-item .description {
+	visibility: hidden;
+}
 
-/* Work Order Form Settings & Work Order Disclaimer Block Settings
+
+
+/* Work Order Form Settings & Work Order Disclaimer Block Settings for Client
 -------------------------------------------------------------- */
+
+.client .form-item-name{
+	visibility: hidden;
+	margin: 0px;
+	height: 1px;
+}	
 
 #pid-node-add-workorder .form-item-title,
 #pid-node-add-workorder .region-help,
@@ -685,7 +737,6 @@ User Menu
 .node-type-workorder .field-items p{
 	margin: 0px 0px 1em 0px;
 }
-
 
 .node-type-workorder .field-items {
 /* 	background-color: aqua; */
@@ -752,11 +803,11 @@ User Menu
 
 /* Blog Page Settings
 -------------------------------------------------------------- */
-#pid-blog h1.title {
+.node-type-blog h1.title {
 	font-family: 'Pantano Sans', sans-serif;
 	font-size: 2em;
 	color: #297373;
-	margin: 20px 10px 0px 38px;
+	margin: 20px 10px 0px 30px;
 }
 
 

@@ -178,8 +178,11 @@ function rel_build_register_form($form, &$form_state, $build_id = '') {
     );
   }
 
+  $info = '<div class="description">';
+  $info .= t('Select which elements you want to manage for %build_id, be careful with elements <strong>highlighted</strong>!', array('%build_id' => $build_id));
+  $info .= '</div>';
   $form['info'] = array(
-    '#markup' => t('Select which elements you want to manage for %build_id.', array('%build_id' => $build_id)),
+    '#markup' => $info,
   );
 
   // Values and actions.

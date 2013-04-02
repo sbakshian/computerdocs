@@ -223,7 +223,7 @@ function node_form($form, &$form_state, $node) {
   );
   $form['author']['name'] = array(
     '#type' => 'textfield',
-    '#title' => t('Authored by'),
+    '#title' => t('Authored By'),
     '#maxlength' => 60,
     '#autocomplete_path' => 'user/autocomplete',
     '#default_value' => !empty($node->name) ? $node->name : '',

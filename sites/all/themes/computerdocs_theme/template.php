@@ -4,4 +4,3 @@ function computerdocs_theme_preprocess_page(&$variables) {
     $variables['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', $variables['node']->type);
   }
 }
-?>

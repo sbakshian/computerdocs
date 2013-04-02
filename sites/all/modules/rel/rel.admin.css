@@ -63,6 +63,9 @@ div.ctools-modal-content {
   color: #666;
 }
 
+#rel-build-register-form .description strong {
+  color: red;
+}
 #rel-build-register-form .dangerous td {
   color: red;
 }
