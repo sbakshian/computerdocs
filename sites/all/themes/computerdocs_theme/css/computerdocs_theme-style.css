@@ -755,6 +755,22 @@ User Menu
 	margin: 0px;
 }
 
+#pid-node-add-workorder .node-form-revision-information,
+#pid-node-add-workorder .vertical-tabs-list,
+#pid-node-add-workorder ul.vertical-tabs-list,
+#pid-node-add-workorder .vertical-tabs,
+.node-type-workorder .vertical-tabs {
+	visibility: hidden;
+	height: 2px;
+}
+
+/* Work Order Revisions Settings	
+-------------------------------------------------------------- */
+.page-node-revisions .content-help{
+	visibility: hidden;
+	height: 20px;
+}
+
 
 /* Find User Views Page Settings
 -------------------------------------------------------------- */
@@ -1015,7 +1031,7 @@ h2.block-title {
   background-color: transparent;
   float: left; /* LTR */
   position: relative; 
-  margin: 0px 0;
+  margin: 10px 0px 0px 0px;
   padding: 0;
 }
 
