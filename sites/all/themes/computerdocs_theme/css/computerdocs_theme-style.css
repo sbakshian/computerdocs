@@ -608,7 +608,10 @@ User Menu
 	margin-bottom: 5px;
 }
 
-
+#block-views-facebook_feed-block {
+/* 	background-color: aqua; */
+	margin-top: 20px;
+}
 
 #block-views-facebook_feed-block .views-row-even{
 }
@@ -817,9 +820,20 @@ User Menu
 	margin: 0px;
 }
 
-/* Blog Page Settings
+
+/* Blog Page Settings & Views Settings
 -------------------------------------------------------------- */
-.node-type-blog h1.title {
+.view-blog .views-field-title a{
+	font-family: 'Pantano Sans', sans-serif;
+	font-size: 1.5em;
+	color: #297373;
+	margin: 0px 10px 0px 0px;
+}
+
+
+/* Blog Page Settings & Views Settings
+-------------------------------------------------------------- */
+.node-type-blog h1.title{
 	font-family: 'Pantano Sans', sans-serif;
 	font-size: 2em;
 	color: #297373;
@@ -831,8 +845,17 @@ User Menu
 	margin-bottom: 50px;
 }
 
+.blog_usernames_blog {
+/* 	background-color: aqua; */
+	visibility: hidden;
+}
 
-
+#pid-blog .meta {
+/* 	background-color: fuchsia; */
+	visibility: hidden;
+	margin: 0px;
+	height: 1px;
+}
 
 /*  Postscript & Footer Regions
 -------------------------------------------------------------- */

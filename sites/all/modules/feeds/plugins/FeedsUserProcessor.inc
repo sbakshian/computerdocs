@@ -40,8 +40,9 @@ class FeedsUserProcessor extends FeedsProcessor {
    * Loads an existing user.
    */
   protected function entityLoad(FeedsSource $source, $uid) {
+    $user = parent::entityLoad($source, $uid);
+
     // Copy the password so that we can compare it again at save.
-    $user = user_load($uid);
     $user->feeds_original_pass = $user->pass;
     return $user;
   }
@@ -53,13 +54,6 @@ class FeedsUserProcessor extends FeedsProcessor {
     if (empty($account->name) || empty($account->mail) || !valid_email_address($account->mail)) {
       throw new FeedsValidationException(t('User name missing or email not valid.'));
     }
-  if (!empty($uid)) {
-	           $account->uid = $uid;
-	          }
-
-	 // If uid is set and a user with that id doesn't exist, flag as new.
-	      if (!empty($account->uid) && !user_load($account->uid)) {
-	      $account->is_new = TRUE;}
   }
 
   /**
@@ -94,9 +88,7 @@ class FeedsUserProcessor extends FeedsProcessor {
    * Delete multiple user accounts.
    */
   protected function entityDeleteMultiple($uids) {
-    foreach ($uids as $uid) {
-      user_delete($uid);
-    }
+    user_delete_multiple($uids);
   }
 
   /**
@@ -134,13 +126,6 @@ class FeedsUserProcessor extends FeedsProcessor {
         '#options' => $roles,
       );
     }
-    // @todo Implement true updating.
-    $form['update_existing'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Replace existing users'),
-      '#description' => t('If an existing user is found for an imported user, replace it. Existing users will be determined using mappings that are a "unique target".'),
-      '#default_value' => $this->config['update_existing'],
-    );
     $form['defuse_mail'] = array(
       '#type' => 'checkbox',
       '#title' => t('Defuse e-mail addresses'),
@@ -173,12 +158,7 @@ class FeedsUserProcessor extends FeedsProcessor {
   public function getMappingTargets() {
     $targets = parent::getMappingTargets();
     $targets += array(
-      'uid' => array(
-        'name' => t('User ID'),
-        'description' => t('The user ID. NOTE: use this feature with care, user IDs are usually assigned by Drupal.'),
-        'optional_unique' => TRUE,
-       ),
-        'name' => array(
+      'name' => array(
         'name' => t('User name'),
         'description' => t('Name of the user.'),
         'optional_unique' => TRUE,
@@ -216,7 +196,7 @@ class FeedsUserProcessor extends FeedsProcessor {
     // Let other modules expose mapping targets.
     self::loadMappers();
     $entity_type = $this->entityType();
-    $bundle = $this->entityType();
+    $bundle = $this->bundle();
     drupal_alter('feeds_processor_targets', $targets, $entity_type, $bundle);
 
     return $targets;

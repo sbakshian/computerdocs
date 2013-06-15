@@ -256,19 +256,12 @@ function rel_module_implements_alter(&$implementations, $hook) {
 function rel_field_attach_form($entity_type, $entity, &$form, &$form_state, $langcode) {
   $rel_build = rel_build_load(NULL, $entity_type, $form['#bundle'], 'form', TRUE);
   if ($rel_build && $rel_build->entity_type != 'rel_build') {
-    // a lot of modules depends on this structure
-    if (isset($form['options'])) {
-      $form_options = $form['options'];
-      unset($form['options']);
-    }
     $new_build = $form;
     _rel_recursive_elements(FALSE, $form, '', $new_build, array(), $rel_build->elements);
     if (isset($new_build['additional_settings']) && isset($rel_build->elements['additional_settings']) && module_exists('field_group')) {
       unset($new_build['additional_settings']);
     }
     $form = $new_build;
-    // reinstate the options structure
-    $form['options'] = isset($form_options) ? $form_options : array();
   }
 }
 
